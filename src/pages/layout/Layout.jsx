@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Outlet } from "react-router";
 import { Button, Menu } from "@mui/material";
 import {
@@ -16,6 +16,8 @@ import {
 
 import { Link } from "react-router";
 import { motion } from "framer-motion";
+import { ChatModal } from "../../components/aiAssitand";
+import { FloatingChatButton } from "../../components/chatbtn";
 const Layout = () => {
   const [isOpen, setIsOpen] = useState(false);
   const footerLinks = {
@@ -32,6 +34,9 @@ const Layout = () => {
     { icon: Github, href: "#", label: "GitHub" },
     { icon: Mail, href: "#", label: "Email" },
   ];
+  const [chatOpen, setChatOpen] = useState(false);
+
+
 
   return (
     <div>
@@ -236,6 +241,8 @@ const Layout = () => {
         <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-t from-background/50 to-transparent pointer-events-none" />
       </footer>
+      <FloatingChatButton onClick={() => setChatOpen(true)} />
+      <ChatModal open={chatOpen} onOpenChange={setChatOpen} />
     </div>
   );
 };
