@@ -118,13 +118,13 @@ const Layout = () => {
                     Home
                   </Link>
                   <Link
-                    href="#specialties"
+                    to="/careers"
                     className="text-muted-foreground hover:text-primary block px-3 py-2 text-base font-medium"
                   >
                     Ихтисосҳо
                   </Link>
                   <Link
-                    href="#about"
+                    to="/about"
                     className="text-muted-foreground hover:text-primary block px-3 py-2 text-base font-medium"
                   >
                     Дар бораи мо
