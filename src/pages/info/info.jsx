@@ -6,13 +6,13 @@ import { useParams } from "react-router";
 import { Card, CardContent, CardHeader, CardTitle } from "../../components/card";
 import { Badge } from "../../components/badge";
 import SalaryVisualization3D from "../../components/salery3D";
+import { API } from "../../lib/config";
 const Info = () => {
-  let api = "http://localhost:3004/api";
   let { id } = useParams();
   let [careerData, setCareerData] = useState({});
   async function get() {
     try {
-      let { data } = await axios.get(`${api}/careers/${id}`);
+      let { data } = await axios.get(`${API}/careers/${id}`);
       setCareerData(data);
     } catch (error) {
       console.error(error);
