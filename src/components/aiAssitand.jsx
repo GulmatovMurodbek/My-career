@@ -4,7 +4,7 @@ import { Button } from "../components/button";
 import { Textarea } from "./textarea";
 import { Send, Loader2 } from "lucide-react";
 import { API } from "../lib/config";
-
+import ImageAi from '../images/imagAi.png'
 export function ChatModal({ open, onOpenChange }) {
   const [question, setQuestion] = useState("");
   const [answer, setAnswer] = useState("");
@@ -43,7 +43,7 @@ export function ChatModal({ open, onOpenChange }) {
       <DialogContent className="sm:max-w-[600px] max-h-[80vh] flex flex-col">
         <DialogHeader>
           <DialogTitle className="flex items-center gap-2 text-2xl  ">
-            🤖 AI Ёрдамчӣ
+            <img className="w-[35px]" src={ImageAi} alt="" /> <span className="text-[blue]"> AI Ёрдамчӣ</span>
           </DialogTitle>
         </DialogHeader>
 
